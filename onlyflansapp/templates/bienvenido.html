@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+    <!-- <h2>Bienvenido {{ user.get_username | upper }}</h2> -->
+    <div  style="display: flex; flex-wrap: wrap; justify-content: center;">
+        {% for flan in flans_privados %}
+          <div style="padding: 10px;">
+            <div class="card">
+                <img src= {{ flan.image_url }} class="card-img-top" alt="imagen" height="220px">
+                <div class="card-body">
+                  <h5 class="card-title">{{flan.name}}</h5>
+                  <p class="card-text">{{flan.description}}</p>
+                  <a href="#" class="btn btn-primary">HACER ALGO</a>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
