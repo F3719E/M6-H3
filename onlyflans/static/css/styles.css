@@ -41,3 +41,44 @@
 /* body{ */
     /* background-color: aquamarine; */
 /* } */
+
+
+.logintxt{
+    display: flex;
+    flex-direction: column
+}
+
+
+.grilladiv{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: beige;
+    text-align: left;
+    border-top: 1px solid !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    height: 3rem;
+}
+
+.colcabeceragrilla{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color:#c5c9cc;
+    color:black;
+    border: 1px solid black;
+   
+
+}
+
+.colinfogrilla{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: beige;
+
+}
+
+/* @media (max-width: 768px) {
+    .mediafont{
+        font-size: 12px;
+    }
+} */

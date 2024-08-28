@@ -10,7 +10,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{flan.name}}</h5>
                 <p class="card-text">{{flan.description}}</p>
-                <a href="#" class="btn btn-primary">HACER ALGO</a>
+                <a href="{% url 'detalles' flan_uuid=flan.flan_uuid %}" class="btn btn-primary">Detalles</a>
               </div>
             </div>
           </div>

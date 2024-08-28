@@ -3,7 +3,28 @@
 {% block 'content' %}
 
     <!-- <h2>Bienvenido {{ user.get_username | upper }}</h2> -->
+ <div class="row d-none d-md-block" style="    text-align: center;">
+        <!-- d-none d-md-block: Esta clase asegura que el contenido se oculte en pantallas menores a 768px (media query md) -->
+        <div class="col">
+          <div class="h-100 p-2 text-white bg-dark rounded-3" style="font-size: 1rem; background-color: #c5c9cc !important; color: black !important;">
+            <h2 style="font-size: 1rem;">Bienvenido {{ user.get_username | upper }}</h2>
+            <p>
+              Tenemos una lista de productos exclusivos para ti. ¿Quieres conocer
+              más etc, etc, etc, etc?
+            </p>
+            <a href="{% url 'contacto' %}" class="btn btn-outline-light" style="    background: dimgray;
+            /* background-color: #6c757d; */
+            border-color: #6c757d;">
+              Contáctanos
+            </a>
+          </div>
+        </div>
+      </div>
     <div  style="display: flex; flex-wrap: wrap; justify-content: center;">
+     
+
+
+
         {% for flan in flans_privados %}
           <div style="padding: 10px;">
             <div class="card">

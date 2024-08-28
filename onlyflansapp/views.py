@@ -6,6 +6,7 @@ from .forms import PostForm,ContactForm,LoginPostForm
 from django.contrib.auth.decorators import login_required
 
 
+
 # Create your views here.
 
 
@@ -20,14 +21,15 @@ def index(request):
     
         # return render(request, 'index.html', context)
 
-
+@login_required
 def bienvenido(request):
         # template = loader.get_template('bienvenido.html')
         # context = {
         #         "usuario":  "PEPE",
         #         # "usuario":  "PEPE1",
         #         }
-        
+        print(f'USUARIO: {request.user.username}') 
+       
         flans_privados = Flan.objects.filter(is_private=True)
         return render(request, 'bienvenido.html', {"flans_privados": flans_privados})
 
@@ -68,7 +70,7 @@ def contacto(request):
 def login(request):
     if request.method == 'POST':
         form = LoginPostForm(request.POST) #TODO: SON LOS CAMPOS Y VALORES DEL FORMULARIO ES UN DICCIONARIO
-        print('POST')
+        print('LOGIN POST')
         print(str(form.is_valid()))
         
         if form.is_valid(): #TODO: VALIDA LOS CAMPOS O PARAMETROS
@@ -88,3 +90,16 @@ def login(request):
 def exito(request):
     return render(request, 'exito.html', {})
 
+
+#TODO: VISTA GRILLA
+def grilla(request):
+    flans_publicos = Flan.objects.filter(is_private=False)
+    return render(request, 'grilla.html', {"flans_publicos": flans_publicos})
+
+
+#TODO: VISTA DETALLE
+def detalles(request, flan_uuid):
+    print(f'FLAN.FLAN_UUID: {flan_uuid}')
+    flan = Flan.objects.get(flan_uuid = flan_uuid)
+    
+    return render(request, 'detalles.html', {'flan' : flan})

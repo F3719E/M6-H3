@@ -26,6 +26,15 @@ SECRET_KEY = 'django-insecure-k$8hh^01m!1)dtf*k%+_6kz7ae$9=9%-0-j*2r%8&!lbdxkk56
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
+#TODO: VIENEN DEL ARCHIVO .ENV
+# SECRET_KEY = config('SECRET_KEY')
+# print(f'{config('TEST_ENV')} {config('DEBUG')}')
+# DEBUG = config('DEBUG')
+
+
+
 ALLOWED_HOSTS = []
 
 ## SETEA LA CARPETA STATIC EN LA APP onlylansapp
@@ -82,6 +91,7 @@ WSGI_APPLICATION = 'onlyflans.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+print(f'BASE_DIR: {BASE_DIR}')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -128,3 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS =(os.path.join(BASE_DIR, 'onlyflans/static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL = '/bienvenido'  #TODO REDIRECCIONA CUANDO HACE LOGIN AL /BIENVENIDOS
+LOGOUT_REDIRECT_URL = '/'
